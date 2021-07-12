@@ -1,18 +1,16 @@
 from logging import debug
 from flask import Flask, render_template, request
-
 from textblob import TextBlob
 from textblob import Word
 
-app1 = Flask(__name__)
+app = Flask(__name__)
 
-
-@app1.route('/')
+@app.route('/')
 def hello():
     return render_template('base.html')
 
-@app1.route('/detect',methods = ['POST'])
-def define():
+@app.route('/detect',methods = ['POST'])
+def predict():
     ip_word = request.form.get('ip-word')
     blob = TextBlob(ip_word)
     res = blob.detect_language()
@@ -23,4 +21,4 @@ def define():
     return render_template('base.html',prediction_text=f'\n the entered text is in : {res}')
 
 if __name__=='__main__':
-    app1.run(debug=True)
+    app.run(debug=True)
