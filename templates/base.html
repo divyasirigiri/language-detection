@@ -1,0 +1,36 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        
+        <h1 id="title">Language Detection</h1>
+
+        <form action ='detect' method = "post">
+            <input type='text' name='ip-word' placeholder = 'enter a word' required = 'required'/>
+            <button type='submit'> Submit </button>
+        <br>
+        <br>
+        {{ prediction_text }}
+        </form>
+    </body>
+</html>
+
+<style>
+     h1 {
+    margin-top: 50px;
+    text-align: center;
+    font: "Lucida Console", "Courier New", monospace;
+
+  }
+  form{
+      text-align: center;
+     
+    }
+  body{
+      text-align: center;
+      background-color:rgb(248, 244, 209);
+      margin-left: 80 px;
+      margin-right: 80 px;
+  }
+</style>
